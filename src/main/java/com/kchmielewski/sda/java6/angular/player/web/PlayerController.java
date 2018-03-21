@@ -4,8 +4,8 @@ import com.kchmielewski.sda.java6.angular.player.application.PlayerDto;
 import com.kchmielewski.sda.java6.angular.player.application.PlayerService;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("players")
 @RestController
+@RequestMapping("players")
 public class PlayerController {
     private final PlayerService service;
 
