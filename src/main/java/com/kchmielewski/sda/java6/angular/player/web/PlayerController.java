@@ -31,20 +31,8 @@ public class PlayerController {
 
     @PutMapping("{id}")
     public PlayerDto update(@PathVariable Integer id, @RequestBody PlayerDto player) {
-//        PlayerDto dto = service.one(id);
         player.setId(id);
-        service.add(player);
-//        if(player.getName() != null)
-//            dto.setName(player.getName());
-//        if(player.setSurname(); != null)
-//            dto.setAddress(player.getAddress());
-//        if(player.getCity() != null)
-//            dto.setCity(player.getCity());
-//        if(player.getPhone() != null)
-//            dto.setPhone(player.getPhone());
-//        if(player.getEmail() != null)
-//            dto.setEmail(player.getEmail());
-//        playerRepository.save(player);
+        service.edit(player);
 
         return player;
     }

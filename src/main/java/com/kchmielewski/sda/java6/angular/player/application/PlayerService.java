@@ -31,6 +31,7 @@ public class PlayerService {
 
     public PlayerDto add(PlayerDto dto) {
         checkNotNull(dto, "PlayerEntity cannot be null");
+        checkArgument(dto.getId() != null, "Player to be added must not have id");
 
         return toDto(repository.save(toEntity(dto)));
     }
@@ -41,11 +42,11 @@ public class PlayerService {
         repository.deleteById(id);
     }
 
-    public void edit(PlayerDto dto) {
+    public PlayerDto edit(PlayerDto dto) {
         checkNotNull(dto, "PlayerEntity cannot be null");
         checkArgument(dto.getId() != null, "Player to be edited must have id");
 
-        repository.save(toEntity(dto));
+        return toDto(repository.save(toEntity(dto)));
     }
 
     private PlayerDto toDto(PlayerEntity entity) {
